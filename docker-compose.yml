@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  app:
+    container_name: lazy_dev_weather_app
+    build:
+      context: .
+      dockerfile: ./docker/app/Dockerfile
+    volumes:
+      - ./app:/home/app
+      - /app/vendor
