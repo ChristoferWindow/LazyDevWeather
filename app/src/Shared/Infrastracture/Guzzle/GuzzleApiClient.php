@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Guzzle;
+namespace Shared\Infrastructure\Guzzle;
 
-use ApiClient;
 use GuzzleHttp\Exception\GuzzleException;
 use Psr\Http\Client\ClientInterface;
+use Shared\Infrastructure\ApiClient;
 
 class GuzzleApiClient implements ApiClient
 {
