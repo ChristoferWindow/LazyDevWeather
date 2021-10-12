@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+namespace Weather\Domain;
 
 final class TemperatureUnits
 {

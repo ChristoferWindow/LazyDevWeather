@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace Shared\Infrastructure;
+
 use Psr\Http\Client\ClientInterface;
 
 interface ApiClient
