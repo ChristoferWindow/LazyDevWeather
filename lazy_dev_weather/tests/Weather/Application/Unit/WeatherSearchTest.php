@@ -6,7 +6,6 @@ namespace Tests\Weather\Application\Unit;
 
 use App\Weather\Application\WeatherSearch;
 use PHPUnit\Framework\TestCase;
-use Tests\Weather\Application\Unit\WeatherTestJsonRepository;
 
 class WeatherSearchTest extends TestCase
 {
@@ -15,7 +14,7 @@ class WeatherSearchTest extends TestCase
     public function setUp(): void
     {
         parent::setUp();
-        $this->stub = new WeatherSearch(new WeatherTestJsonRepository());
+        $this->stub = new WeatherSearch(new WeatherTestArrayRepository());
     }
 
     /**

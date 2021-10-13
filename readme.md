@@ -21,3 +21,20 @@ In container run `./vendor/bin/phpunit /home/lazy_dev_weather/tests`
 Run
 2. `cd /home/lazy_dev_weather && ./vendor/bin/psalm`
 
+
+## How the code works?
+Goal of the project was to create hexagonal architecture where we can be fully framework agnostic based on high abstraction.
+
+`weather.php` is a simple CLI starting point for running the `WeatherSearch`.
+
+#### Api clients swapping
+We can easily swap ApiClients, new client MUST implement `Shared\Infrastructure\ApiClient`.
+
+#### Repository swapping
+We can easily swap weather repositories - whether it be DB or another API - see `Tests\Weather\Application\Unit\WeatherTestArrayRepository`
+
+#### Adding new repositories
+In order to add different repository infrastructure it must implement the `Weather\Domain\WeatherRepository`
+For API repositories it's recommended to extend by `Weather\Infrastructure`.
+
+For example purposes there's `OpenWeather API` implemented as a repository see `Weather\Infrastructure\OpenWeatherApiRepository`

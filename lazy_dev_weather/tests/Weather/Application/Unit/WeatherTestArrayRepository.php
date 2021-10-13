@@ -9,7 +9,7 @@ use App\Weather\Domain\TemperatureUnits;
 use App\Weather\Domain\WeatherForCity;
 use App\Weather\Domain\WeatherRepository;
 
-class WeatherTestJsonRepository implements WeatherRepository
+class WeatherTestArrayRepository implements WeatherRepository
 {
     private function repositoryData()
     {
