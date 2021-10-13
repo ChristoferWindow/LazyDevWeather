@@ -12,6 +12,7 @@ use GuzzleHttp\Client;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Dotenv\Dotenv;
 
+/** TODO: test on mock response of 2.5 OpenWeatherApi */
 class OpenWeatherApiRepositoryIntegrationTest extends TestCase
 {
     public function setUp(): void
