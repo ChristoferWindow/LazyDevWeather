@@ -14,5 +14,4 @@ final class WeatherForCityQuery implements Query
     {
         return $this->cityName;
     }
-
 }
