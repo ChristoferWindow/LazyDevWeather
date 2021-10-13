@@ -2,10 +2,10 @@ services:
   _defaults:
     autowire: true
     autoconfigure: true
-  App\:
-    resource: '../../src/*'
-  App\Console\:
-    resource: '../../console/WeatherCommand.php
+#  App\:
+#    resource: '../../app/*'
+#  App\Console\:
+#    resource: '../../app/Console/WeatherCommand.php'
   guzzle:
     class: GuzzleHttp\Client
   guzzleApiClient:

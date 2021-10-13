@@ -6,5 +6,5 @@ services:
       context: .
       dockerfile: ./docker/app/Dockerfile
     volumes:
-      - ./app:/home/app
-      - /app/vendor
+      - ./lazy_dev_weather:/home/lazy_dev_weather
+      - /lazy_dev_weather/vendor

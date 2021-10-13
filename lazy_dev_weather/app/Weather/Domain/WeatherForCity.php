@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Weather\Domain;
 
+use App\Weather\Application\Temperature;
+
 class WeatherForCity
 {
     public function __construct(

@@ -13,7 +13,8 @@ class WeatherSearch
     public function searchForCity(string $cityName): string
     {
         $weather = $this->repository->searchForCity(new WeatherForCityQuery($cityName));
+        $temperature = (new Temperature($weather->getTemperature()))->getFormattedDecimalPlaces(2);
 
-        return  "{$weather->getShortDescription()}, {$weather->getTemperature()} {$weather->getUnitNiceText()}";
+        return  "{$weather->getShortDescription()}, {$temperature} {$weather->getUnitNiceText()}";
     }
 }
