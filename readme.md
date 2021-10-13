@@ -10,8 +10,7 @@
    1. `docker exec -it lazy_dev_weather_app /bin/sh`
    2. `./deploy_lazy_dev_weather.sh`
 ## How to check weather?
-1. In docker container go to `/home/lazy_dev_weather/`
-2. Run `php weather.php CityName`
+1. In docker container run `php /home/lazy_dev_weather/weather.php CityName`
    1. If city name is multi segment use quotes `php weather.php 'Los angeles'`
 ## Tests
 In container run `./vendor/bin/phpunit /home/lazy_dev_weather/tests`
