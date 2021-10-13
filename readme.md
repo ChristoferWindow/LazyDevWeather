@@ -7,7 +7,7 @@
    3. Optionally set `OPEN_WEATHER_API_KEY` if there's newer
 2. run `docker-compose up -d`
 3. when the container is on run
-   1. `docker exec -it lazy_dev_weather_app`
+   1. `docker exec -it lazy_dev_weather_app /bin/sh`
    2. `./deploy_lazy_dev_weather.sh`
 ## How to check weather?
 1. In docker container go to `/home/lazy_dev_weather/`
