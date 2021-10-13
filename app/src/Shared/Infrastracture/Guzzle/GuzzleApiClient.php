@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Shared\Infrastructure\Guzzle;
+namespace App\Shared\Infrastructure\Guzzle;
 
+use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
-use Psr\Http\Client\ClientInterface;
-use Shared\Infrastructure\ApiClient;
+use App\Shared\Infrastructure\ApiClient;
 
 class GuzzleApiClient implements ApiClient
 {
-    public function __construct(private ClientInterface $client) {}
+    public function __construct(private Client $client) {}
 
     public function search(string $url, array $params): array
     {

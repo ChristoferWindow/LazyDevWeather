@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Weather\Application;
+namespace App\Weather\Application;
 
-use Weather\Domain\WeatherRepository;
+use App\Weather\Domain\WeatherRepository;
 
 class WeatherSearch
 {

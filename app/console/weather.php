@@ -2,11 +2,10 @@
 
 declare(strict_types=1);
 
+use Symfony\Component\Console\Application;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\Config\FileLocator;
-use Weather\Application\WeatherSearch;
-use Weather\Infrastructure\OpenWeatherApiRepository;
 
 set_exception_handler('exceptionHandler');
 
@@ -27,8 +26,10 @@ $argumentsCount = $argc;
  * Removing file name from arguments array
  */
 array_shift($arguments);
-$weatherSearch = new WeatherSearch(new OpenWeatherApiRepository(new \Shared\Infrastructure\Guzzle\GuzzleApiClient(new \GuzzleHttp\Client()), 'api.openweathermap.org/data/2.5/weather','c0f764ce5e4c25576b8d6325fc223810'));
-print ($weatherSearch->searchForCity($arguments[0]));
+
+$app = new Application();
+$app->add(new \App\Console\WeatherCommand('Weather'));
+$app->run();
 
 function exceptionHandler($exception): void
 {

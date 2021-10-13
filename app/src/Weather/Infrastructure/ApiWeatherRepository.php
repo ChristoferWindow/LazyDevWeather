@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Weather\Infrastructure;
+namespace App\Weather\Infrastructure;
 
-use Shared\Infrastructure\ApiClient;
-use Weather\Application\WeatherForCityQuery;
-use Weather\Domain\WeatherForCity;
-use Weather\Domain\WeatherRepository;
+use App\Shared\Infrastructure\ApiClient;
+use App\Weather\Application\WeatherForCityQuery;
+use App\Weather\Domain\WeatherForCity;
+use App\Weather\Domain\WeatherRepository;
 
 abstract class ApiWeatherRepository implements WeatherRepository
 {

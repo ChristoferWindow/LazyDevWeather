@@ -2,3 +2,20 @@ services:
   _defaults:
     autowire: true
     autoconfigure: true
+  App\:
+    resource: '../../src/*'
+  App\Console\:
+    resource: '../../console/WeatherCommand.php
+  guzzle:
+    class: GuzzleHttp\Client
+  guzzleApiClient:
+    class: App\Shared\Infrastructure\Guzzle\GuzzleApiClient
+    arguments: ["@guzzle"]
+  openWeatherApiRepository:
+    class: App\Weather\Infrastructure\OpenWeatherApiRepository
+    arguments: ['@guzzleApiClient', '%env(string:OPEN_WEATHER_API_URL)%', '%env(string:OPEN_WEATHER_API_KEY)%']
+  weatherSearch:
+    class: App\Weather\Application\WeatherSearch
+    arguments: ["@openWeatherApiRepository"]
+
+

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Weather\Domain;
+namespace App\Weather\Domain;
 
 class WeatherForCity
 {
