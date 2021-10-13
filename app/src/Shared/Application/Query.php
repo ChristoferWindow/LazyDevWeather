@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Shared\Application;
+namespace App\Shared\Application;
 
 interface Query
 {

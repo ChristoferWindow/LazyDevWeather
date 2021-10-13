@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Weather\Domain;
+namespace App\Weather\Domain;
 
-use Weather\Application\WeatherForCityQuery;
+use App\Weather\Application\WeatherForCityQuery;
 
 interface WeatherRepository
 {

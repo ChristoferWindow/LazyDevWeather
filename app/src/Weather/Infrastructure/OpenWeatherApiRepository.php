@@ -2,18 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Weather\Infrastructure;
+namespace App\Weather\Infrastructure;
 
-use Shared\Infrastructure\ApiClient;
-use Weather\Application\WeatherForCityQuery;
-use Weather\Domain\WeatherForCity;
+use App\Shared\Infrastructure\ApiClient;
+use App\Weather\Application\WeatherForCityQuery;
+use App\Weather\Domain\WeatherForCity;
 
 final class OpenWeatherApiRepository extends ApiWeatherRepository
 {
     public function __construct(private ApiClient $client, private string $apiUrl, private string $apiKey)
-    {
-        parent::__construct($this->client);
-    }
+    {}
 
     public function searchForCity(WeatherForCityQuery $query): WeatherForCity
     {
