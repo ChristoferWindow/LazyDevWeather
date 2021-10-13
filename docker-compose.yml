@@ -8,3 +8,4 @@ services:
     volumes:
       - ./lazy_dev_weather:/home/lazy_dev_weather
       - /lazy_dev_weather/vendor
+      - ./docker/app/deploy_lazy_dev_weather.sh:/home/deploy_lazy_dev_weather.sh
