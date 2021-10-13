@@ -8,5 +8,5 @@ use App\Weather\Application\WeatherForCityQuery;
 
 interface WeatherRepository
 {
-    public function searchForCity(WeatherForCityQuery $query): WeatherForCity;
+    public function searchForCity(WeatherForCityQuery $query): ?WeatherForCity;
 }
