@@ -13,7 +13,13 @@
       "App\\": "app/"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
   "require-dev": {
-    "vimeo/psalm": "^4.10"
+    "vimeo/psalm": "^4.10",
+    "phpunit/phpunit": "^9"
   }
 }

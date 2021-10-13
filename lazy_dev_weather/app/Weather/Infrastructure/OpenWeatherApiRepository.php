@@ -9,6 +9,7 @@ use App\Shared\Infrastructure\GuzzleClient\GuzzleApiClient;
 use App\Weather\Application\Temperature;
 use App\Weather\Application\WeatherForCityQuery;
 use App\Weather\Domain\WeatherForCity;
+use GuzzleHttp\Exception\GuzzleException;
 
 final class OpenWeatherApiRepository extends ApiWeatherRepository
 {
@@ -17,16 +18,21 @@ final class OpenWeatherApiRepository extends ApiWeatherRepository
         parent::__construct($this->client);
     }
 
-    public function searchForCity(WeatherForCityQuery $query): WeatherForCity
+    public function searchForCity(WeatherForCityQuery $query): ?WeatherForCity
     {
-        $responseContent = $this->getClient()
-            ->search(
-                $this->apiUrl,
-                [
-                    'q' => $query->getCityName(),
-                    'appid' => $this->apiKey,
-                ]
-            );
+        try {
+            $responseContent = $this->getClient()
+                ->search(
+                    $this->apiUrl,
+                    [
+                        'q' => $query->getCityName(),
+                        'appid' => $this->apiKey,
+                    ]
+                );
+        } catch (GuzzleException $e) {
+            /** TODO: Logging, response on error*/
+            return null;
+        }
 
         return new WeatherForCity(
             $responseContent['name'],

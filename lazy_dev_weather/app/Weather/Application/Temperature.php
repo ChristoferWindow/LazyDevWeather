@@ -6,6 +6,7 @@ namespace App\Weather\Application;
 
 class Temperature
 {
+    /** TODO: temperature unit */
     public function __construct(private float $temperature)
     {}
 
